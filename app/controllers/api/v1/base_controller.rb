@@ -1,7 +1,8 @@
 class Api::V1::BaseController < ActionController::Base
-    include Pundit
+    include Pundit::Authorization
     after_action :verify_authorized, except: :index
     after_action :verify_policy_scoped, only: :index
+    protect_from_forgery with: :null_session
 
     rescue_from StandardError, with: :internal_server_error
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

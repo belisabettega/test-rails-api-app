@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+gem 'simple_token_authentication'
 group :development, :test do    
     gem 'pry-byebug'
     gem 'pry-rails'
